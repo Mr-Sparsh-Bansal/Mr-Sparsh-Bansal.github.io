@@ -1,226 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Srishti</title>
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
-    }
+<svg width="1200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- RGB Gradient -->
+    <linearGradient id="rgbGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffff">
+        <animate attributeName="stop-color" values="#00ffff;#ff00ff;#00ff00;#00ffff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00ff00">
+        <animate attributeName="stop-color" values="#00ff00;#00ffff;#ff00ff;#00ff00" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
 
-    .center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
+    <!-- Glow Effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 
-    h1 {
-      font-size: 3rem;
-      color: #ff69b4;
-      text-shadow: 0 0 20px #ff69b4;
-    }
+  <!-- Background -->
+  <rect width="1200" height="200" fill="#000b1a"/>
 
-    p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #90ee90;
-      opacity: 0.8;
-    }
+  <!-- Bright Panels -->
+  <g fill="url(#rgbGradient)" opacity="0.15">
+    <rect x="20" y="20" width="200" height="160" rx="12"/>
+    <rect x="980" y="20" width="200" height="160" rx="12"/>
+    <circle cx="300" cy="100" r="90"/>
+    <circle cx="900" cy="100" r="90"/>
+  </g>
 
-    #startBtn, #slideshowBtn {
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #00ff99;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      color: black;
-      cursor: pointer;
-      box-shadow: 0 0 20px #00ff99;
-      animation: pulse 1.5s infinite;
-    }
-    
-    #slideshowBtn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(50%);
-  padding: 15px 30px;
-  background: #ff69b4;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 15px #ff69b4;
-  display: none;
-}
+  <!-- Thick Circuit Traces -->
+  <g stroke="#00f6ff" stroke-width="3" opacity="0.5" fill="url(#rgbGradient)" filter="url(#glow)">
+    <path d="M100,50 h150 v50 h80"/>
+    <path d="M1100,100 h-90 v40 h-60"/>
+    <path d="M600,100 l-120,-60"/>
+    <path d="M600,100 l120,60"/>
+    <path d="M200,160 l100,-100"/>
+    <path d="M1000,40 l-90,90"/>
+  </g>
 
+  <!-- Large Glowing Gears -->
+  <g fill="#00f6ff" opacity="0.5">
+    <g transform="translate(120,100)">
+      <circle r="35"/>
+      <circle r="25" fill="#000b1a"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(0)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(60)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(120)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(180)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(240)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(300)"/>
+    </g>
+    <g transform="translate(1080,100)">
+      <circle r="35"/>
+      <circle r="25" fill="#000b1a"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(30)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(90)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(150)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(210)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(270)"/>
+      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(330)"/>
+    </g>
+  </g>
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+  <!-- Central Text -->
+  <text x="50%" y="50%" text-anchor="middle" dy=".35em"
+        font-family="Orbitron, sans-serif" font-size="48"
+        fill="url(#rgbGradient)" filter="url(#glow)" font-weight="bold">
+    AI Revolution
+  </text>
 
-    .message {
-      position: absolute;
-      top: 10%;
-      width: 100%;
-      text-align: center;
-      font-size: 1.7rem;
-      display: none;
-      white-space: pre-line;
-      padding: 20px;
-      color: #ff69b4;
-      text-shadow: 0 0 10px #ff69b4;
-    }
+  <!-- Thick Crosshair & Radials -->
+  <g stroke="url(#rgbGradient)" stroke-width="2.5" opacity="0.7">
+    <circle cx="600" cy="100" r="80" fill="none"/>
+    <line x1="600" y1="0" x2="600" y2="200"/>
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+  </g>
 
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    #slideshow {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    #slideImage {
-      max-width: 80vw;
-      max-height: 80vh;
-      border-radius: 15px;
-      box-shadow: 0 0 30px #ff69b4;
-    }
-  </style>
-</head>
-<body>
-  <div class="center" id="mainContent">
-    <h1>🎉 Happy Birthday, Srishti! 🎂</h1>
-    <p>Click the magic button below 🎈</p>
-    <button id="startBtn">Click Me</button>
-  </div>
-
-  <div class="message" id="loveMessage"></div>
-  <button id="slideshowBtn">My Fav Shots📸</button>
-
-  <div id="slideshow">
-    <img id="slideImage" src="" />
-  </div>
-
-  <canvas id="fireworks"></canvas>
-
-  <script>
-    const messageText = `💖 Hey One And Only Srishti 💖\n\nToday the world celebrates YOU. ✨\nYou light up lives with your smile,\nAnd make everything around you better just by being there. 💫\n\nYou're not just a dream come true,\nYou're the reason someone believes in magic again. ✨\n\nFrom your laugh that melts hearts,\nTo your kindness that inspires the soul...\nYou're rare, you're radiant, you're everything. 💕\n\nSo here's to your day —\nTo love, to joy, to endless surprises.\nAnd to the countless memories we'll make together. \n\n🎂 Happy Birthday, My Queen 👑\nYou are loved beyond words.\nYou are cherished more than stars.\nYou. Are. Incredible. 💖\n\nWith all my heart — Yours forever.`;
-
-    const btn = document.getElementById("startBtn");
-    const msg = document.getElementById("loveMessage");
-    const main = document.getElementById("mainContent");
-    const slideshowBtn = document.getElementById("slideshowBtn");
-    const slideshowDiv = document.getElementById("slideshow");
-    const slideImage = document.getElementById("slideImage");
-
-    const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
-    let currentSlide = 0;
-
-    btn.onclick = () => {
-      main.style.display = 'none';
-      msg.style.display = 'block';
-      typeMessage();
-      launchFireworks();
-    };
-
-    function typeMessage() {
-      let index = 0;
-      const interval = setInterval(() => {
-        msg.innerText = messageText.slice(0, index++);
-        if (index > messageText.length) {
-          clearInterval(interval);
-          slideshowBtn.style.display = 'inline-block';
-        }
-      }, 50);
-    }
-
-    slideshowBtn.onclick = () => {
-      msg.style.display = "none";
-      slideshowBtn.style.display = "none";
-      slideshowDiv.style.display = "block";
-      startSlideshow();
-    };
-
-    function startSlideshow() {
-      slideImage.src = images[currentSlide];
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % images.length;
-        slideImage.src = images[currentSlide];
-      }, 3000);
-    }
-
-    // Fireworks logic
-    const canvas = document.getElementById("fireworks");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-
-    function launchFireworks() {
-      setInterval(() => {
-        for (let i = 0; i < 100; i++) {
-          particles.push({
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            angle: Math.random() * 2 * Math.PI,
-            speed: Math.random() * 5 + 2,
-            radius: Math.random() * 2 + 1,
-            life: 100,
-            color: `hsl(${Math.random() * 360}, 100%, 70%)`
-          });
-        }
-      }, 700);
-
-      animate();
-    }
-
-    function animate() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((p, index) => {
-        const vx = Math.cos(p.angle) * p.speed;
-        const vy = Math.sin(p.angle) * p.speed;
-        p.x += vx;
-        p.y += vy;
-        p.life--;
-        p.speed *= 0.98;
-        if (p.life <= 0) particles.splice(index, 1);
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    window.onresize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-  </script>
-</body>
-</html>
+  <!-- Bottom Bar -->
+  <rect x="0" y="185" width="1200" height="15" fill="#001f2f"/>
+  <text x="10" y="197" font-size="12" fill="url(#rgbGradient)" font-family="monospace">
+    SYSTEM ONLINE ░ CELEBRATION MODE ░ RGB: ACTIVE ░ BIRTHDAY SIGNAL: STRONG
+  </text>
+</svg>
