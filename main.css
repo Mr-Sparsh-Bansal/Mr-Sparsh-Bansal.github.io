@@ -1,0 +1,80 @@
+body {
+  background-image: url(webpagebg.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.calc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outputeq {
+  width: 280px;
+  height: 80px;
+  font-size: 36px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-image: url(background.png);
+  background-size: cover;
+  color: black;
+}
+
+/* button grid */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  grid-gap: 5px;
+}
+
+/* button style */
+button {
+  font-size: 30px;
+  padding: 15px 0;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* colors */
+.inp_1 { background-color: greenyellow; color: black; }
+.inp_2 { background-color: orange; color: black; }
+.inp_3 { background-color: palevioletred; }
+.inp_4 { background-color: darkgoldenrod; }
+
+.inp_5 { background-color: deeppink; }
+.inp_6 { background-color: gold; color: black; }
+.inp_7 { background-color: red; }
+.inp_8 { background-color: royalblue; }
+
+.inp_9 { background-color: mediumspringgreen; color: black; }
+.inp_10 { background-color: mediumturquoise; }
+.inp_11 { background-color: rebeccapurple; }
+.inp_12 { background-color: rgb(9, 255, 0); color: black; }
+
+.inp_13 { background-color: rgb(255, 65, 65); }
+.inp_14 { background-color: rgb(255, 72, 0); }
+.inp_15 { background-color: rgb(156, 0, 0); }
+.inp_16 { background-color: springgreen; color: black; }
+
+.inp_clear {
+  grid-column: span 4;
+  background-color: crimson;
+}

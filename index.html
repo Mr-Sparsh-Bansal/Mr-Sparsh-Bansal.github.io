@@ -1,87 +1,39 @@
-<svg width="1200" height="200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- RGB Gradient -->
-    <linearGradient id="rgbGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00ffff">
-        <animate attributeName="stop-color" values="#00ffff;#ff00ff;#00ff00;#00ffff" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#00ff00">
-        <animate attributeName="stop-color" values="#00ff00;#00ffff;#ff00ff;#00ff00" dur="4s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful Calculator</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="calc-center">
+    <input type="text" readonly id="outputEq" class="outputeq">
+    <div class="button-grid">
+      <button class="inp_1" onclick="usernumber('1')">1</button>
+      <button class="inp_2" onclick="usernumber('2')">2</button>
+      <button class="inp_3" onclick="usernumber('3')">3</button>
+      <button class="inp_4" onclick="usernumber('+')">+</button>
 
-    <!-- Glow Effect -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+      <button class="inp_5" onclick="usernumber('4')">4</button>
+      <button class="inp_6" onclick="usernumber('5')">5</button>
+      <button class="inp_7" onclick="usernumber('6')">6</button>
+      <button class="inp_8" onclick="usernumber('-')">-</button>
 
-  <!-- Background -->
-  <rect width="1200" height="200" fill="#000b1a"/>
+      <button class="inp_9" onclick="usernumber('7')">7</button>
+      <button class="inp_10" onclick="usernumber('8')">8</button>
+      <button class="inp_11" onclick="usernumber('9')">9</button>
+      <button class="inp_12" onclick="usernumber('*')">*</button>
 
-  <!-- Bright Panels -->
-  <g fill="url(#rgbGradient)" opacity="0.15">
-    <rect x="20" y="20" width="200" height="160" rx="12"/>
-    <rect x="980" y="20" width="200" height="160" rx="12"/>
-    <circle cx="300" cy="100" r="90"/>
-    <circle cx="900" cy="100" r="90"/>
-  </g>
+      <button class="inp_13" onclick="usernumber('/')">/</button>
+      <button class="inp_14" onclick="usernumber('0')">0</button>
+      <button class="inp_15" onclick="usernumber('.')">.</button>
+      <button class="inp_16" onclick="usernumber('=')">=</button>
 
-  <!-- Thick Circuit Traces -->
-  <g stroke="#00f6ff" stroke-width="3" opacity="0.5" fill="url(#rgbGradient)" filter="url(#glow)">
-    <path d="M100,50 h150 v50 h80"/>
-    <path d="M1100,100 h-90 v40 h-60"/>
-    <path d="M600,100 l-120,-60"/>
-    <path d="M600,100 l120,60"/>
-    <path d="M200,160 l100,-100"/>
-    <path d="M1000,40 l-90,90"/>
-  </g>
-
-  <!-- Large Glowing Gears -->
-  <g fill="#00f6ff" opacity="0.5">
-    <g transform="translate(120,100)">
-      <circle r="35"/>
-      <circle r="25" fill="#000b1a"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(0)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(60)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(120)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(180)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(240)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(300)"/>
-    </g>
-    <g transform="translate(1080,100)">
-      <circle r="35"/>
-      <circle r="25" fill="#000b1a"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(30)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(90)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(150)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(210)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(270)"/>
-      <path d="M0,-35 l6,-12 l12,0 l6,12 l-6,12 l-12,0 z" transform="rotate(330)"/>
-    </g>
-  </g>
-
-  <!-- Central Text -->
-  <text x="50%" y="50%" text-anchor="middle" dy=".35em"
-        font-family="Orbitron, sans-serif" font-size="48"
-        fill="url(#rgbGradient)" filter="url(#glow)" font-weight="bold">
-    AI Revolution
-  </text>
-
-  <!-- Thick Crosshair & Radials -->
-  <g stroke="url(#rgbGradient)" stroke-width="2.5" opacity="0.7">
-    <circle cx="600" cy="100" r="80" fill="none"/>
-    <line x1="600" y1="0" x2="600" y2="200"/>
-    <line x1="0" y1="100" x2="1200" y2="100"/>
-  </g>
-
-  <!-- Bottom Bar -->
-  <rect x="0" y="185" width="1200" height="15" fill="#001f2f"/>
-  <text x="10" y="197" font-size="12" fill="url(#rgbGradient)" font-family="monospace">
-    SYSTEM ONLINE ░ CELEBRATION MODE ░ RGB: ACTIVE ░ BIRTHDAY SIGNAL: STRONG
-  </text>
-</svg>
+      <button class="inp_clear" onclick="clearCalc()">C</button>
+    </div>
+  </div>
+</body>
+</html>
