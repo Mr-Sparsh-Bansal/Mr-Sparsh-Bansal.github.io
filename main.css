@@ -10,12 +10,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Center layout */
 .calc-center {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Display screen */
 .outputeq {
   width: 280px;
   height: 80px;
@@ -30,14 +32,14 @@ body {
   color: black;
 }
 
-/* button grid */
+/* Grid layout for buttons */
 .button-grid {
   display: grid;
   grid-template-columns: repeat(4, 70px);
   grid-gap: 5px;
 }
 
-/* button style */
+/* Base button styling */
 button {
   font-size: 30px;
   padding: 15px 0;
@@ -53,7 +55,7 @@ button:hover {
   opacity: 0.9;
 }
 
-/* colors */
+/* Colorful buttons */
 .inp_1 { background-color: greenyellow; color: black; }
 .inp_2 { background-color: orange; color: black; }
 .inp_3 { background-color: palevioletred; }
@@ -74,7 +76,13 @@ button:hover {
 .inp_15 { background-color: rgb(156, 0, 0); }
 .inp_16 { background-color: springgreen; color: black; }
 
+/* Clear and Delete buttons (bottom row) */
 .inp_clear {
-  grid-column: span 4;
+  grid-column: span 2;
   background-color: crimson;
+}
+
+.inp_delete {
+  grid-column: span 2;
+  background-color: rgb(0, 132, 255);
 }

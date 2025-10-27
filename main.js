@@ -5,7 +5,6 @@ function usernumber(vcolor) {
 
   if (vcolor === "=") {
     try {
-      // evaluate safely
       expression = eval(expression).toString();
       output.value = expression;
     } catch (e) {
@@ -21,4 +20,9 @@ function usernumber(vcolor) {
 function clearCalc() {
   expression = "";
   document.getElementById("outputEq").value = "";
+}
+
+function deleteLast() {
+  expression = expression.slice(0, -1);
+  document.getElementById("outputEq").value = expression;
 }
